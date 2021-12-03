@@ -9,7 +9,7 @@ sender = "orhmeta@gmail.com"
 yag = yagmail.SMTP(user=sender, password=PASSWORD)
 
 df = pandas.read_csv('contacts.csv')
-print(df)
+#print(df)
 
 for index, row in df.iterrows():
     subject = f"Thank you for applying to {row['role']}"
