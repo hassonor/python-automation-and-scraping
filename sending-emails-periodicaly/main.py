@@ -3,7 +3,7 @@ from decouple import config
 import time
 
 sender = "orhmeta@gmail.com"
-receiver = "hassonor@gmail.com"
+receiver = "sparklingltd@outlook.com"
 
 subject = "This is Automate Email Sending :-)"
 
@@ -12,9 +12,9 @@ contents = """
     Enjoy!
 """
 PASSWORD = config('PASSWORD')
-
-while True:
+count = 0
+while count < 1000:
+    count += 1
     yag = yagmail.SMTP(user=sender, password=PASSWORD)
-    yag.send(to=receiver, subject=subject, contents=contents)
-    print("Email Sent :-)")
-    time.sleep(60)
+    yag.send(to=receiver, subject=f"{subject}-{count}", contents=contents)
+    print("Email Sent :-) Num: " + str(count))
