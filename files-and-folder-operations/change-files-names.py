@@ -14,4 +14,4 @@ def change_files_names_to_parent_and_parent_parent_folders_name(rood_dir_path):
             path.rename(new_filepath)  # change the filename to new filename in the correct dir
 
 
-change_files_names_to_parent_and_parent_parent_folders_name('files2', )
+change_files_names_to_parent_and_parent_parent_folders_name('playground/files2', )

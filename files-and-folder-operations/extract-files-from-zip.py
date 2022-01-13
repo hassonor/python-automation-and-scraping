@@ -11,4 +11,4 @@ def extract_files_from_zip(rood_dir_path, destination_path):
             zf.extractall(path=final_path)
 
 
-extract_files_from_zip('extract_zip_files', 'extract_zip_files/destination')
+extract_files_from_zip('playground/extract_zip_files', 'playground/extract_zip_files/destination')

@@ -10,4 +10,4 @@ def extract_files_from_zip(rood_dir_path, files_extensions_to_remove):
         path.unlink()
 
 
-extract_files_from_zip("empty_files", "txt")
+extract_files_from_zip("playground/empty_files", "txt")

@@ -13,4 +13,4 @@ def create_zip_archive(rood_dir_path, archive_name, ):
             # path.unlink() # removing the zipped files
 
 
-create_zip_archive('zip_files', 'archive')
+create_zip_archive('playground/zip_files', 'archive')

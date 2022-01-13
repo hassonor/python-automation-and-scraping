@@ -9,4 +9,4 @@ def change_files_extensions_names(rood_dir_path, src_extension, dist_extension):
             path.rename(new_filepath)
 
 
-change_files_extensions_names('files4', "txt", "csv")
+change_files_extensions_names('playground/files4', "txt", "csv")

@@ -9,4 +9,4 @@ def create_empty_files(rood_dir_path, number_of_empty_files, type_extension_file
         filepath.touch()
 
 
-create_empty_files('empty_files', 40, 'csv')
+create_empty_files('playground/empty_files', 40, 'csv')

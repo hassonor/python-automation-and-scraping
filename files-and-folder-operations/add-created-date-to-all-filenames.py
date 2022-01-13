@@ -13,4 +13,4 @@ def add_created_date_to_files(root_path, time_and_date_format):
             path.rename(new_filepath)  # change the filename to new filename in the correct dir
 
 
-add_created_date_to_files('files3', "%Y-%m-%d_%H-%M-%S")
+add_created_date_to_files('playground/files3', "%Y-%m-%d_%H-%M-%S")
