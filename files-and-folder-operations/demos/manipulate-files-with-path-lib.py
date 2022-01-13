@@ -11,7 +11,7 @@ print(p1.name)  # print filename
 print(p1.stem)  # print file name without extension
 print(p1.suffix)  # print file extension
 
-p2 = Path('files')
+p2 = Path('../files')
 print(p2.iterdir())
 for item in p2.iterdir():
     print(item)

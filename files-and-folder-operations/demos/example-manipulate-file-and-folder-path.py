@@ -1,6 +1,6 @@
 from pathlib import Path
 
-root_dir = Path('files')
+root_dir = Path('../files')
 file_paths = root_dir.glob("**/*")
 
 for path in file_paths:
