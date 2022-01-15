@@ -4,6 +4,7 @@ from selenium import webdriver
 
 def get_driver(url):
     options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
     options.add_argument('disable-infobars')
     options.add_argument('start-maximized')
     options.add_argument('disable-dev-shm-usage')
