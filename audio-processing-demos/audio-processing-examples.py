@@ -17,14 +17,17 @@ def create_reverse_and_merged_audio_file(file_path):
     original = AudioSegment.from_wav(file_path)
     print(type(original))
     print(original)
+
     reversed_audio = original.reverse()  # reversed the original audio
-    reversed_audio.export('reversed.wav')
+    reversed_audio.export('files/reversed.wav')
     reversed_audio = reversed_audio + 15  # increase volume by 15
+
     first_two = original[0:5000]  # 5 seconds long
-    first_two.export('first_5_seconds.wav')
+    first_two.export('files/first_5_seconds.wav')
+
     merged = original + AudioSegment.silent(
         1000) + reversed_audio  # add the original file the reversed audio + Adding 1s silence
-    merged.export('merged_original_reversed.wav')
+    merged.export('files/merged_original_reversed.wav')
 
 
-create_reverse_and_merged_audio_file('sample.wav')
+create_reverse_and_merged_audio_file('files/sample.wav')
