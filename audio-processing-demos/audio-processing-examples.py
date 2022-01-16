@@ -1,5 +1,5 @@
-# download ffmpeg and unzip to "C:\ffmpeg" and set the path var "C:\ffmpeg\bin"
-# you can dowonload it form here https://www.ffmpeg.org/
+# download ffmpeg and unzip to "C:\ffmpeg" and set the  var env path "C:\ffmpeg\bin"
+# you can download it form here https://www.ffmpeg.org/
 # see also this:  https://stackoverflow.com/questions/51219531/pydub-unable-to-locate-ffprobe
 
 # Enjoy your mix DJ :-)
