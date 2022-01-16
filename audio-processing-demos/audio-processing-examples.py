@@ -10,13 +10,10 @@ from pydub import AudioSegment
 AudioSegment.converter = "C:\\ffmpeg\\bin\\ffmpeg.exe"
 AudioSegment.ffmpeg = "C:\\ffmpeg\\bin\\ffplay.exe"
 AudioSegment.ffprobe = "C:\\ffmpeg\\bin\\ffprobe.exe"
-print(AudioSegment.converter)
 
 
 def create_reverse_and_merged_audio_file(file_path):
     original = AudioSegment.from_wav(file_path)
-    print(type(original))
-    print(original)
 
     reversed_audio = original.reverse()  # reversed the original audio
     reversed_audio.export('files/reversed.wav')

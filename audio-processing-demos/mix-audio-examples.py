@@ -6,8 +6,8 @@ AudioSegment.ffprobe = "C:\\ffmpeg\\bin\\ffprobe.exe"
 
 
 def mixing_audio_files(file_path_1, file_path_2):
-    song = AudioSegment.from_mp3(file_path_1)
-    beat = AudioSegment.from_mp3(file_path_2)
+    song = AudioSegment.from_wav(file_path_1)
+    beat = AudioSegment.from_wav(file_path_2)
 
     mixed = beat.overlay(song)  # mixed the beat and song :-)
     mixed.export('files/mixed_song.wav')
