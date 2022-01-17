@@ -1,0 +1,13 @@
+Free Time:
+07:00-08:00
+11:30-13:00
+15:00-16:00
+17:00-19:00
+
+Free starting Slots:
+Available slot: 07:00
+Available slot: 11:30
+Available slot: 15:00
+Available slot: 17:00
+
+Process finished with exit code 0

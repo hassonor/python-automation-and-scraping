@@ -1,0 +1,13 @@
+Person name,Event subject,Event start time,Event end time
+Alice,"Morning meeting",08:00,09:30
+Alice,"Lunch with Jack",13:00,14:00
+Alice,"Yoga",16:00,17:00
+Jack,"Morning meeting",08:00,08:50
+Jack,"Sales call",09:00,09:40
+Jack,"Lunch with Alice",13:00,14:00
+Jack,"Yoga",16:00,17:00
+Bob,"Morning meeting",08:00,09:30
+Bob,"Morning meeting 2",09:30,09:40
+Bob,"Q3 review",10:00,11:30
+Bob,"Lunch and siesta",13:00,15:00
+Bob,"Yoga",16:00,17:00
