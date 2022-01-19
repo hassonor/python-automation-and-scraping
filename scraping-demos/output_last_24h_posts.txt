@@ -1,0 +1,50 @@
+WSL problems: Selenium opens up Chrome/Firefox but does not grab URL
+Hi,
+
+I'm at my wit's end trying to get Selenium working on Ubuntu 20 on WSL2. 
+
+Where I'm at is that selenium will open the correct browser but does not open a URL.
+
+    from selenium import webdriver
+    from selenium.webdriver.common.keys import Keys
+    
+    # driver = webdriver.Firefox(executable_path='./driverfiles/geckodriver')
+    driver = webdriver.Firefox(executable_path='/mnt/c/Program Files/Mozilla Firefox/firefox.exe')
+    driver.get("http://www.python.org")
+    assert "Python" in driver.title
+    elem = driver.find_element_by_name("q")
+    elem.clear()
+    elem.send_keys("pycon")
+    elem.send_keys(Keys.RETURN)
+    assert "No results found." not in driver.page_source
+    driver.close()
+
+The only teminal output I get is:
+
+    a.py:5: DeprecationWarning: executable_path has been deprecated, please pass in a Service object
+      driver = webdriver.Firefox(executable_path='/mnt/c/Program Files/Mozilla Firefox/firefox.exe')
+
+So what happens is that a new firefox window opens, as expected, but it does not fetch the [python.org](https://python.org) website and hangs forever. It's basically the equivalent of launching the browser from the start menu.
+
+I'd love some help on this... Thanks in advance.
+
+Is there a way to edit a squarespace website with Python Webscraping?
+I am trying to update the company website based on information I scrape from our separate booking portal. The company site was setup before I was here and it exists as a "drag and drop" squarespace site (which I do not have much experience in, in general). I've used Selenium and Python to do everything up to now, however, I'm not sure how to continue. I am at the part where I need to select the body of text for editing and somehow replace it with the information I stored earlier.
+
+&#x200B;
+
+Cheers
+
+Best practice for running selenium on web server and maintaining constantly uptime
+First off, I am completely new to selenium so I appreciate your patience.  I just got my remote debian 10 VM running an example script properly.
+
+Currently I am running selenium in a ssh connection via
+
+`xvfb-run java -Dwebdriver.chrome.driver=/var/www/chromedriver -jar selenium-server-4.1.1.jar standalone`
+
+and chromedriver in a sperate ssh connection via
+
+`./chromedriver -url-base=/wd/hub`
+
+So, my question is, what is best way to make sure that selenium and chromedriver are always running on a remote headless server?  The only approach I know of is using nohup and that no ability to start/maintain the process if it stops or if the server reboots.  Maybe a cron bash script?  I would appreciate any help, I just don't know.  Also, can someone confirm that I don't have to do anything to google-chrome...it just has to be installed but there is no other requirements for it to be running etc. Thank you.
+
