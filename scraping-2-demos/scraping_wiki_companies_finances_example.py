@@ -7,6 +7,7 @@ import re
 def scrap_wiki_html_by_search(to_search):
     # Download and parse the HTML
     start_url = f'https://en.wikipedia.org/wiki/{to_search}'
+
     # Download the HTML from start_url
     downloaded_html = requests.get(start_url)
 
@@ -21,9 +22,10 @@ def scrap_wiki_html_by_search(to_search):
     # Create a Pandas DataFrame
     df = pd.DataFrame(table_data, columns=table_columns)
     print(df)
+    df.to_csv(f'assets/{to_search}_finances_from_wiki.csv', encoding='utf-8')
     # Save a local copy
-    with open(f'assets/wiki_downloaded_{to_search}.html', 'w', encoding="utf-8") as file:
-        file.write(soup.prettify())
+    # with open(f'assets/wiki_downloaded_{to_search}.html', 'w', encoding="utf-8") as file:
+    #     file.write(soup.prettify())
 
 
 def extract_columns(full_table):
@@ -60,4 +62,6 @@ def extract_rows(full_table):
     return table_data
 
 
+# Getting Finances data by years :-)
 scrap_wiki_html_by_search('BMW')
+scrap_wiki_html_by_search('Netflix')
