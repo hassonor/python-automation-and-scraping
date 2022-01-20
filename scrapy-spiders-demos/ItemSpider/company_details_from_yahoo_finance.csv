@@ -1,0 +1,26 @@
+company_name,company_price_intraday,company_symbol,company_symbol_link
+Apple Inc.,169.18,AAPL,https://finance.yahoo.com/sector/ms_technology/quote/AAPL?p=AAPL
+Microsoft Corporation,310.42,MSFT,https://finance.yahoo.com/sector/ms_technology/quote/MSFT?p=MSFT
+Taiwan Semiconductor Manufacturing Company Limited,131.555,TSM,https://finance.yahoo.com/sector/ms_technology/quote/TSM?p=TSM
+NVIDIA Corporation,254.1101,NVDA,https://finance.yahoo.com/sector/ms_technology/quote/NVDA?p=NVDA
+ASML Holding N.V.,727.99,ASML,https://finance.yahoo.com/sector/ms_technology/quote/ASML?p=ASML
+Adobe Inc.,528.97,ADBE,https://finance.yahoo.com/sector/ms_technology/quote/ADBE?p=ADBE
+"Cisco Systems, Inc.",58.825,CSCO,https://finance.yahoo.com/sector/ms_technology/quote/CSCO?p=CSCO
+Broadcom Inc.,568.67,AVGO,https://finance.yahoo.com/sector/ms_technology/quote/AVGO?p=AVGO
+"salesforce.com, inc.",230.6,CRM,https://finance.yahoo.com/sector/ms_technology/quote/CRM?p=CRM
+Oracle Corporation,84.13,ORCL,https://finance.yahoo.com/sector/ms_technology/quote/ORCL?p=ORCL
+Accenture plc,351.89,ACN,https://finance.yahoo.com/sector/ms_technology/quote/ACN?p=ACN
+Intel Corporation,53.7853,INTC,https://finance.yahoo.com/sector/ms_technology/quote/INTC?p=INTC
+QUALCOMM Incorporated,174.61,QCOM,https://finance.yahoo.com/sector/ms_technology/quote/QCOM?p=QCOM
+Texas Instruments Incorporated,179.47,TXN,https://finance.yahoo.com/sector/ms_technology/quote/TXN?p=TXN
+SAP SE,138.96,SAP,https://finance.yahoo.com/sector/ms_technology/quote/SAP?p=SAP
+Intuit Inc.,563.77,INTU,https://finance.yahoo.com/sector/ms_technology/quote/INTU?p=INTU
+"Advanced Micro Devices, Inc.",127.9851,AMD,https://finance.yahoo.com/sector/ms_technology/quote/AMD?p=AMD
+Sony Group Corporation,115.38,SONY,https://finance.yahoo.com/sector/ms_technology/quote/SONY?p=SONY
+Shopify Inc.,1065.28,SHOP,https://finance.yahoo.com/sector/ms_technology/quote/SHOP?p=SHOP
+"Applied Materials, Inc.",146.45,AMAT,https://finance.yahoo.com/sector/ms_technology/quote/AMAT?p=AMAT
+International Business Machines Corporation,132.4125,IBM,https://finance.yahoo.com/sector/ms_technology/quote/IBM?p=IBM
+"ServiceNow, Inc.",542.01,NOW,https://finance.yahoo.com/sector/ms_technology/quote/NOW?p=NOW
+Infosys Limited,24.1951,INFY,https://finance.yahoo.com/sector/ms_technology/quote/INFY?p=INFY
+"Micron Technology, Inc.",89.4799,MU,https://finance.yahoo.com/sector/ms_technology/quote/MU?p=MU
+Lam Research Corporation,654.625,LRCX,https://finance.yahoo.com/sector/ms_technology/quote/LRCX?p=LRCX

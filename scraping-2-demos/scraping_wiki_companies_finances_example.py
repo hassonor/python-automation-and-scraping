@@ -15,7 +15,10 @@ def scrap_wiki_html_by_search(to_search):
     soup = BeautifulSoup(downloaded_html.text, features="lxml")
 
     # Find all links on the html
-    html_from_site_html = soup.findAll("a", attrs={'href': re.compile("^https")})
+    html_from_site_html = soup.findAll("a",
+                                       attrs={'href': re.compile("^http|https")})  # Find all http | https links on page
+    # html_from_site_html = soup.findAll("a", href=True)  # Find all links on page
+
     for html in html_from_site_html:
         print(html['href'])
 

@@ -1,0 +1,218 @@
+
+# Before we start any projects go to the Yahoo finance page and inspect the table 
+# and the individual columns to show what we're going to scrape
+
+
+#create folder to save your projects
+mkdir scrapy_projects
+
+#Then cd to dir_name(scrapy_projects)
+cd scrapy_projects
+
+#SimpleSpider
+
+# Create a new Scrapy project
+scrapy startproject SimpleSpider
+
+# cd into the project directory
+cd SimpleSpider
+
+# View contents of directory
+ls -n
+
+# cd into the SimpleSpider directory
+cd SimpleSpider
+
+# View contents of directory
+ls -n
+
+# cd into spiders directory
+cd spiders
+
+# View contents of directory
+ls -n
+
+#This will create a spider with default template
+scrapy genspider company_details finance.yahoo.com
+
+#view spider created by genspider
+ls -n
+
+# Now you can see company_details.py file is created and now open this file in
+# Sublime Text and write code for the Spider(company_details.py) which is in spiders directory.
+
+# run the spider from the top-level project directory so we will move up two folder
+
+cd ../..
+
+# Execute the spider(when ever your running your spider check your pwd, you have to be in a location of Scrapy_Projects/SimpleSpider/SimpleSpider)
+scrapy crawl company_details
+
+
+# open sublime text editor and create a .py file named as actual_company_details.py and write code for spider and save it in SimpleSpider/SimpleSpider/spiders directory
+
+# Check that the actual_company_details.py has been created 
+ls -n
+
+cd ..
+
+scrapy crawl actual_company_details 
+
+# View contents of company_details_file.txt
+# Show names of the companies scraped from the yahoo.finance page
+less -N actual_company_details.txt
+
+
+
+#ItemSpider
+
+#from scrapy shell
+
+# Scrape companies details from finance.yahoo
+scrapy shell https://finance.yahoo.com/sector/ms_technology/
+
+# Within the shell, defining an Item to store companies details in items.py
+import scrapy
+
+class CompanyDetailsItem(scrapy.Item):
+    company_name = scrapy.Field()
+    company_price_intraday = scrapy.Field()
+    company_symbol = scrapy.Field()
+    company_symbol_link = scrapy.Field()
+
+
+# Create a new CompanyDetailsItem
+details = CompanyDetailsItem()    
+
+# Import the pprint module
+from pprint import pprint
+ 
+# Inspect name of the company
+# Extract all names of companies
+pprint(response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[2]/text()').extract())     
+
+# Extract name of first company
+pprint(response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[2]/text()').get()) 
+#or
+pprint(response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[2]/text()').extract_first())
+
+# Check the value of the "company_name" field in the Item
+details['company_name']
+# No value is set so we get a KeyError
+# Set a value for it
+# Assign names to the instance Item which we created previously
+details['company_name'] = response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[2]/text()').get()   
+
+# View the value of the field we just set
+details['company_name']
+
+# Extract company price of intraday
+response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[3]/span/text()').get()
+
+# Assign this to the Item instance
+details['company_price_intraday'] = response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[3]/span/text()').get()
+
+# View the value of the field we just set
+details['company_price_intraday']
+
+#extract symbol of company
+response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[1]/a/text()').get()
+
+# Assign this to the Item instance
+details['company_symbol'] = response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[1]/a/text()').get()
+
+# Now view the value
+details['company_symbol']
+
+#Extract link for company details
+response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[1]/a/@href').get()
+
+#this will give complete link
+url = 'https://finance.yahoo.com/sector/ms_technology' 
+
+details['company_symbol_link'] = url + response.xpath('//*[@id="scr-res-table"]/div[1]/table/tbody/tr/td[1]/a/@href').get()
+
+details['company_symbol_link']
+#### Items in a Spider
+
+
+
+
+# Create a new project
+scrapy startproject ItemSpider
+
+# cd into the directory with items.py
+cd ItemSpider/ItemSpider/
+
+# Open up items.py in SublimeText or some text editor
+# The file should consist of these lines
+import scrapy
+
+class CompanyDetailsItem(scrapy.Item):
+    company_name = scrapy.Field()
+    company_price_intraday = scrapy.Field()
+    company_symbol = scrapy.Field()
+    company_symbol_link = scrapy.Field()
+
+# Open up SublimeText or some text editor and code up the company_details_item.py
+
+# cd into the root directory of the project
+cd ..
+
+scrapy crawl company_details_item
+
+scrapy crawl company_details_item -o company_details.csv -t csv
+
+
+
+
+
+#### ItemLoader
+
+cd..
+# Create a new project
+scrapy startproject ItemLoaderSpider
+
+# cd into the directory with items.py
+cd ItemLoaderSpider/ItemLoaderSpider/
+
+ls -n
+# Create the items.py file with the CompanyDetailsItem
+# Show the input processor for the symbol link
+# Create a company_details_itemloader.py spider
+
+cd ..
+# Run the spider
+# Don't add in any processor in the company_details_itemloader.py code first
+# Run and show the output
+scrapy crawl company_details_itemloader
+
+# Make the changes such as adding default output processor (TakeFirst()) and run again, the final time the output should be in the CSV file
+# Open up the CSV file in sublimetext and display the output
+scrapy crawl company_details_itemloader -o company_details_itemloader.csv -t csv
+
+
+
+#### PipelineSpider
+
+cd..
+# Create a new project
+scrapy startproject PipelineSpider
+
+# cd into the directory with items.py
+cd PipelineSpider/PipelineSpider/
+
+ls -n
+# Edit the pipelines.py, items.py and settings.py and company_details_pipeline.py files
+
+# cd to the root of the project
+cd ..
+
+# Run the spider
+scrapy crawl company_details_pipeline 
+
+# Create csv
+scrapy crawl company_details_pipeline -o company_details_pipeline.csv -t csv
+
+
+
