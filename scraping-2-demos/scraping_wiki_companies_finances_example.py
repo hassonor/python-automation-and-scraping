@@ -14,6 +14,11 @@ def scrap_wiki_html_by_search(to_search):
     # Parse the HTML with BeautifulShop and create a soup object
     soup = BeautifulSoup(downloaded_html.text, features="lxml")
 
+    # Find all links on the html
+    html_from_site_html = soup.findAll("a", attrs={'href': re.compile("^https")})
+    for html in html_from_site_html:
+        print(html['href'])
+
     full_table = soup.select('table.wikitable')[0]
 
     table_columns = extract_columns(full_table)

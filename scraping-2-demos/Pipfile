@@ -8,6 +8,7 @@ requests = "*"
 beautifulsoup4 = "*"
 pandas = "*"
 jupyterlab = "*"
+scrapy = "*"
 
 [dev-packages]
 
