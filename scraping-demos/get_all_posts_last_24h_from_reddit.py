@@ -10,7 +10,7 @@ def get_all_posts_24h_by_subject_on_reddit(subreddit):
                          password=config('REDDIT_PASSWORD'))
     subreddit = reddit.subreddit(subreddit)
     posts24h = []
-    with open('output_last_24h_posts.txt', 'w') as file:
+    with open('assets/output_last_24h_posts.txt', 'w') as file:
         for post in subreddit.new():
             current_time = datetime.utcnow()  # getting the current time (utc local time)
             post_time = datetime.utcfromtimestamp(post.created)  # convert timestamp to utc format
