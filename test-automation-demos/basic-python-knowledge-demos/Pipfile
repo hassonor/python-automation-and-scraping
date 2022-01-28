@@ -4,13 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
-beautifulsoup4 = "*"
-pandas = "*"
-jupyterlab = "*"
-scrapy = "*"
-flask = "*"
-jinja2 = "*"
+pytest = "*"
 
 [dev-packages]
 
