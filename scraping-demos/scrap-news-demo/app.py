@@ -4,8 +4,6 @@ from scrapy.selector import Selector
 
 app = Flask(__name__)
 
-"""By Daniel Fogel"""
-
 
 @app.route("/")
 def index():
@@ -77,3 +75,5 @@ def index():
 
 if __name__ == "__main__":
     app.run()
+
+"""Daniel Fogel"""

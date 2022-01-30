@@ -1,0 +1,93 @@
+"""
+Waiting Strategies
+-------------------
+
+1. Static Wait -> time.sleep(x) (LAST PRIORITY)
+
+2. Implicit Wait -> Use the Webdriver server's built-in element finding retry, up to a timeout.
+    -> When you have an implicit wait active, if you request an element from the server and it can't be
+       found, the server will keep trying to find it up until the timeout you set
+    -> Set the implicit wait timeout using driver.implicitly_wait(10).
+    -> Implicit wait timeouts are global and apply to all elements you find.
+    -> Implicit waits only work for finding elements, not for waiting for other kind of app state (like page titles,
+    text values of elements, etc...)
+
+3. Explicit Wait -> Use Expected Conditions to poll the app for appropriate state.
+   -> Can check for any state which can be determined using Webdriver functionality.
+   -> The polling functionality is built into the Python client on a class called WebDriverWait
+      (selenium.webdriver.support.wait.WebDriverWait)
+   -> WebDriverWaits have an until() method which takes an Expected Condition
+      (selenium.webdriver.support.expected_conditions)
+
+Some Expected Conditions Examples:
+------------------------------------
+expected_conditions.title_is('some title')
+expected_conditions.url_to_be('https://some.url.com')
+expected_conditions.presence_of_element_located((by="css selector", value='foo'))
+
+"""
+
+"""
+WebElements Objects
+-------------------
+Calls to driver.find_elements(s) return one or more WebElement objects
+-> WeElements are represented by an ID shared between client and server to refer to the same HTML element
+-> In Python, WebElements are instances of a class and have number of useful methods for interacting with elements
+-> Certain other Webdriver commands take elements as parameters, and for those, WebElement
+objects can be used
+"""
+
+"""
+Basic Element Interation
+------------------------
+element.click() -> Click or tap the element
+element.send_keys('text') -> Send 'text' as a eries of keystrokes into an input field element
+element.clear() -> Remove any text or value from an input field element
+text = element.text -> Retrieve the text displayed within the element, and assign it to Python variable text
+
+"""
+
+"""
+More Interation Examples
+------------------------
+driver.back(); driver.forward() -> Go back or forward in browser history
+driver.refresh() -> Refresh the page
+source = driver.page_source -> Get the current HTML source as a string
+res = driver.execute_script('return 2+2;') -> Execute Javascript in the context of the page and get the result
+driver.save_screenshot('foo.png') -> Save a screenshot of the current state of the page to a file
+
+"""
+
+"""
+Window Interaction
+------------------
+name_list = driver.windows_handles -> Get a list of IDs for all available windows
+driver.switch_to.window(handle) -> Switch to a given window by its handle
+handle = driver.current_window_handle -> Get the handle of the currently active window
+
+"""
+
+"""
+Window Size/ Position
+---------------------
+driver.maximize_window() -> Maximize the window
+driver.minimize_window() -> Minimize the window
+driver.get_window_rect() -> Get the width, height, and x & y position of the window
+driver.set_window_rect(x=50, y=50, height=100, width=200) -> Set the width, height and position of the window
+
+"""
+
+"""
+Frame Interation
+------------------
+Frames are webpages embedded in other webpages
+* Frames come in two varieties: <frame> and <iframe>
+* Selenium / WebDriver allow you to work with <frame> and <iframe> in exactly the same way
+
+driver.switch_to.frame(frame) -> Switch to a given frame, either by its index, its name, or as a found WebElement
+driver.switch_to.parent_frame() -> Switch focus to the parent of the current frame (has no effect if already the top
+level)
+driver.switch_to.default_content() -> Switch focus back to the default frame/window
+
+"""
+
