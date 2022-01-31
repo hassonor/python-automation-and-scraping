@@ -7,6 +7,8 @@ name = "pypi"
 termgraph = "*"
 selenium = "*"
 appium-python-client = "*"
+webdriver-manager = "*"
+html-testrunner = "*"
 
 [dev-packages]
 

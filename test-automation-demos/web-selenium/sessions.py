@@ -1,6 +1,7 @@
 from time import sleep
 
 from selenium import webdriver
+from selenium.webdriver import Keys
 
 
 def get_driver(url):
@@ -18,7 +19,13 @@ def get_driver(url):
 
 
 try:
-    web_driver = get_driver("https://the-internet.herokuapp.com")
+    web_driver = get_driver("https://google.com")
+    element = web_driver.find_element(by="name", value='q').send_keys("Automation step by step")
+    element.send_keys("Automation step by step")
+    element.send_keys(Keys.ENTER)
+
+
 finally:
     sleep(2)
     web_driver.quit()
+    print("Completed")
